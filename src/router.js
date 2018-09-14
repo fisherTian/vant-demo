@@ -6,7 +6,7 @@ Vue.use(Router);
 const routes = [
   {
     path: '*',
-    redirect: '/goods'
+    redirect: '/index'
   },
   {
     name: 'user',
@@ -23,10 +23,26 @@ const routes = [
     }
   },
   {
-    name: 'goods',
-    component: () => import('./view/goods'),
+    name: 'index',
+    component: () => import('./view/index'),
+    redirect: '/index/project',
+    children: [{
+        path: 'project',
+        name: 'project',
+        component: () => import('./view/project'),
+        meta: {
+            title: '项目宝'
+        }
+    },{
+        path: 'subscibe',
+        name: 'subscibe',
+        component: () => import('./view/subscibe'),
+        meta: {
+            title: '项目宝'
+        }
+    }],
     meta: {
-      title: '商品详情'
+      title: '项目宝'
     }
   }
 ];
