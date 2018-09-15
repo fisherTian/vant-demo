@@ -9,19 +9,19 @@ const routes = [
     redirect: '/index'
   },
   {
-    name: 'user',
-    component: () => import('./view/user'),
+    name: 'order',
+    component: () => import('./view/order'),
     meta: {
-      title: '会员中心'
+      title: '订阅'
     }
   },
-  {
-    name: 'cart',
-    component: () => import('./view/cart'),
+{
+    name: 'detail',
+    component: () => import('./view/detail'),
     meta: {
-      title: '购物车'
+        title: '信息详情'
     }
-  },
+},
   {
     name: 'index',
     component: () => import('./view/index'),

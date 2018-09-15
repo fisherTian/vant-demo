@@ -6,12 +6,12 @@
         <van-tabbar v-model="active">
             <van-tabbar-item @click="open('/index/project')">
                 <span>项目</span>
-                <i slot="icon"
+                <i slot="icon" style="font-size: 23px;"
                    slot-scope="props" :class="props.active ? 'iconfont icon-xiangmu-copy' : 'iconfont icon-xiangmu'"></i>
             </van-tabbar-item>
             <van-tabbar-item @click="open('/index/subscibe')">
                 <span>订阅</span>
-                <i slot="icon"
+                <i slot="icon" style="font-size: 23px;"
                    slot-scope="props" :class="props.active ? 'iconfont icon-dingyue-copy-copy' : 'iconfont icon-dingyue-copy'"></i>
             </van-tabbar-item>
         </van-tabbar>
@@ -53,7 +53,12 @@
     };
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
+
+    .van-tabbar--fixed{
+        position: fixed!important;
+    }
+
 .main_box{
     width: 100%;
     height: calc(100% - 50px);

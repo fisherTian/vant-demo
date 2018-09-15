@@ -1,6 +1,6 @@
 <template>
     <div >
-        <van-tabs v-model="active">
+        <van-tabs v-model="active" style="height: 44px;padding-top: 0px!important;">
             <van-tab title="招标公告"></van-tab>
             <van-tab title="公开询价"></van-tab>
         </van-tabs>
@@ -8,7 +8,7 @@
         <van-row class="subscribe">
             <van-col span="8"><span class="sub_k">产品：</span>软件开发</van-col>
             <van-col span="8"><span class="sub_k">地区：</span>泰州</van-col>
-            <van-col span="8" class="text-right"><van-button size="small" type="primary">编辑订阅</van-button></van-col>
+            <van-col span="8" class="text-right"><van-button size="small" type="primary" @click="open('/order')">编辑订阅</van-button></van-col>
         </van-row>
 
         <van-notice-bar
@@ -17,7 +17,7 @@
         />
 
         <ul class="project_nav">
-            <li class="project_item">
+            <li class="project_item" @click="open('/detail')">
                 <div class="title">
                     泰州学院数据中心采购项目
                 </div>
@@ -31,9 +31,9 @@
                 </div>
             </li>
 
-            <li class="project_item">
+            <li class="project_item" @click="open('/detail')">
                 <div class="title">
-                    泰州学院数据中心采购项目
+                    泰州学院数据中心采购项目泰州学院数据中心采购项目泰州学院数据中心采购项目泰州学院数据中心采购项目
                 </div>
                 <van-row class="sub">
                     <van-col span="8"><i class="sub_k iconfont icon-tongzhi"></i> 招标</van-col>
@@ -45,9 +45,9 @@
                 </div>
             </li>
 
-            <li class="project_item">
+            <li class="project_item" @click="open('/detail')">
                 <div class="title">
-                    泰州学院数据中心采购项目
+                    泰州学院数据中心采购项目泰州学院数据中心采购项目泰州学院数据中心采购项目泰州学院数据中心采购项目
                 </div>
                 <van-row class="sub">
                     <van-col span="8"><i class="sub_k iconfont icon-tongzhi"></i> 招标</van-col>
@@ -59,19 +59,7 @@
                 </div>
             </li>
 
-            <li class="project_item">
-                <div class="title">
-                    泰州学院数据中心采购项目
-                </div>
-                <van-row class="sub">
-                    <van-col span="8"><i class="sub_k iconfont icon-tongzhi"></i> 招标</van-col>
-                    <van-col span="8"><i class="sub_k iconfont icon-didian"></i> 泰州</van-col>
-                    <van-col span="8"><i class="sub_k iconfont icon-shijian"></i> 20118-09-10</van-col>
-                </van-row>
-                <div class="sub_content">
-                    标文件评分标准 （1）厂商需具备互联网安全研发中心应用安全联盟会员资格，具备3年以上（含）会员资格，并且公司业务多
-                </div>
-            </li>
+
         </ul>
 
     </div>
@@ -102,12 +90,17 @@
         },
 
         methods: {
-
+            open (url) {
+                this.$router.push({
+                    path: url
+                })
+            }
         }
     };
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
+
 .subscribe{
     padding:10px;
     font-size: 13px;
@@ -121,8 +114,13 @@
         color:#f44;
     }
 
+    .project_nav{
+        width: 100%;
+        height: calc(100% - 130px);
+        overflow: auto;
+    }
+
     .project_item{
-        height: 100px;
         background: #fff;
         padding: 20px 10px;
         margin: 10px 0px;
@@ -130,7 +128,7 @@
 
 .project_item .title{
     font-size: 15px;
-    font-weight: blod;
+    font-weight: bold;
 }
 .project_item .sub{
     padding: 15px 0;
@@ -143,7 +141,7 @@
     font-size: 12px;
 }
 .project_item .sub_content{
-    font-size: 14px;
+    font-size: 13px;
     overflow:hidden;
     text-overflow:ellipsis;
     display:-webkit-box;

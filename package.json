@@ -1,8 +1,8 @@
 {
-  "name": "vant-demo",
+  "name": "xmb",
   "version": "1.0.0",
-  "description": "Collection of vant demos.",
-  "author": "陈嘉涵 <chenjiahan@youzan.com>",
+  "description": "XMB",
+  "author": "小鱼",
   "scripts": {
     "serve": "vue-cli-service serve --open",
     "build": "vue-cli-service build",
